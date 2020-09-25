@@ -1,13 +1,17 @@
 (ns drug-store-api.core
   (:require [io.pedestal.http :as http]
-            [clojure.tools.namespace.repl :refer [refresh]]))
+            [clojure.tools.namespace.repl :refer [refresh]]
+            [drug-store-api.drugs]))
 
 (defn respond-hello [request]
   {:status 200
    :body   "Hello, World!"})
 
 (def routes
-  #{["/hello" :get `respond-hello]})
+  #{["/hello" :get `respond-hello]
+    ["/drugs" :get drug-store-api.drugs/all-drugs
+              :route-name
+              :get-drugs]})
 
 (def service-map
   {::http/routes routes
