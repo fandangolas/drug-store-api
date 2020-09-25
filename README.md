@@ -1,8 +1,8 @@
 # Drug Store Api
 
-Drug Store Api is an API written to learn more about Clojure, it uses Pedestal.io and connects with a Postgres instance using HugSQL.
+Drug Store Api is an API written to learn more about Clojure. It uses Pedestal.io and connects with a Postgres instance using HugSQL.
 
-In general, it's a simple API that helps to manage a drugs stock.
+In general, it's just a simple API that manages a drugs stock.
 
 ## Features
 
