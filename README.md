@@ -7,10 +7,10 @@ In general, it's just a simple API that manages a drugs stock.
 ## Features
 
 **_List all the drugs on the store_**
-> Method:[GET] </br>
-> Endpoint: /drugs </br>
-> Authentication: None </br>
-> Query Parameters - None 
+> Method: `[GET]` </br>
+> Endpoint: `/drugs` </br>
+> Authentication: `None` </br>
+> Query Parameters - `None` 
 
 Example response:
 
