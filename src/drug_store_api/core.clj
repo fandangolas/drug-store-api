@@ -1,7 +1,8 @@
 (ns drug-store-api.core
   (:require [io.pedestal.http :as http]
             [clojure.tools.namespace.repl :refer [refresh]]
-            [drug-store-api.drugs]))
+            [drug-store-api.drugs])
+  (:gen-class))
 
 (defn respond-hello [request]
   {:status 200
@@ -34,6 +35,8 @@
   (halt)
   (refresh :after 'drug-store-api.core/go))
 
+(defn -main [& args]
+  (go))
 
 
 
