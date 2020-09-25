@@ -1,0 +1,32 @@
+<configuration scan="true" scanPeriod="10 seconds">
+  <statusListener class="ch.qos.logback.core.status.NopStatusListener" />
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+      <fileNamePattern>logs/pedestal-service-%d{yyyy-MM-dd}.%i.log</fileNamePattern> 
+      <maxFileSize>64 MB</maxFileSize>
+    </rollingPolicy>
+<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>DEBUG</level>
+    </filter>
+    <prudent>true</prudent>
+  </appender>
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+    <!-- Only log level WARN and above -->
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>WARN</level>
+    </filter>
+  </appender>
+  <root level="INFO">
+    <appender-ref ref="FILE" />
+    <appender-ref ref="STDOUT" />
+  </root>
+  <logger name="pedestal" level="ALL" />
+  <logger name="hammock-cafe" level="ALL" />
+  <logger name="user" level="ALL" />
+</configuration>
